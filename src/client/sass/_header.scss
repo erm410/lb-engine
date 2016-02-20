@@ -1,0 +1,59 @@
+* {
+	margin: 0;
+}
+
+html {
+	height: 100vh;
+}
+
+body {
+
+	height: 100vh;
+
+	&>div.row {
+
+		height: 100%;
+
+		&>div {
+			height: 100%;
+		}
+
+	}
+}
+
+.title {
+	text-align: center;
+}
+
+@mixin menu-button {
+	width: 100%;
+	margin: 0;
+	padding: 6px 14px;
+	text-align: left;
+}
+
+user-menu {
+	.md-button {
+		@include menu-button;
+	}
+}
+
+main-menu {
+	.md-button {
+		@include sm {
+			@include menu-button;
+		}
+	}
+}
+
+login-menu {
+	.md-button {
+		@include sm {
+			@include menu-button;
+		}
+	}
+}
+
+.md-button .fa {
+	line-height: 20px
+}

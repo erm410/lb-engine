@@ -1,0 +1,52 @@
+<md-toolbar md-whiteframe>
+	<div class="md-toolbar-tools">
+		<main-menu hide show-gt-sm></main-menu>
+
+		<h1 flex class="title">Natural Reaction</h1>
+
+		<md-button hide-gt-sm class="md-icon-button" ng-click="mdSidenav('right-slider').toggle()"
+			aria-label="Open Right Menu">
+			<md-icon md-font-icon="fa-ellipsis-v" class="fa"></md-icon>
+		</md-button>
+
+		<md-menu ng-if="user" md-position-mode="target-right target" hide show-gt-sm>
+			<md-button md-menu-origin ng-click="$mdOpenMenu($event)">
+				<md-icon md-font-icon="fa-user" class="fa"></md-icon>
+				{{user}}
+				<md-icon md-font-icon="fa-caret-down" class="fa"></md-icon>
+			</md-button>
+			<md-menu-content>
+				<user-menu user="user" hide show-gt-sm></user-menu>
+			</md-menu-content>
+		</md-menu>
+
+		<login-menu user="user" hide show-gt-sm></login-menu>
+
+	</div>
+</md-toolbar>
+
+<md-sidenav md-component-id="right-slider" class="md-sidenav-right">
+
+	<md-toolbar md-whiteframe>
+		<div class="md-toolbar-tools">
+			<h2><md-icon md-font-icon="fa-bars" class="fa"></md-icon>Main Menu</h2>
+		</div>
+	</md-toolbar>
+
+	<main-menu></main-menu>
+
+	<md-divider></md-divider>
+	<br>
+	<md-divider></md-divider>
+
+	<md-toolbar md-whiteframe ng-if="user">
+		<div class="md-toolbar-tools">
+			<h2><md-icon md-font-icon="fa-user" class="fa"></md-icon>{{user}}</h2>
+		</div>
+	</md-toolbar>
+	<user-menu user="user"></user-menu>
+
+	<login-menu user="user"></login-menu>
+
+	<md-divider></md-divider>
+</md-sidenav>

@@ -1,0 +1,34 @@
+@mixin login-button($base, $state) {
+	width: 140px;
+	height: 34px;
+	background-size: cover;
+	background-image: url("../images/#{$base}#{$state}.png");
+}
+
+@mixin login-img($base) {
+	@include login-button($base, "");
+
+	&:focus {
+		@include login-button($base, "Focus");
+	}
+
+	&:hover {
+		@include login-button($base, "Hover");
+	}
+}
+
+.google-login {
+	@include login-img("google");
+}
+
+.facebook-login {
+	@include login-img("facebook");
+}
+
+.linkedin-login {
+	@include login-img("linkedin");
+}
+
+.twitter-login {
+	@include login-img("twitter");
+}

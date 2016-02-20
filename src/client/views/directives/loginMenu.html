@@ -1,0 +1,29 @@
+<md-menu ng-if="!user" md-position-mode="target-right target">
+	<md-button md-menu-origin ng-click="$mdOpenMenu($event)">
+		<md-icon class="fa fa-sign-in fa-fw"></md-icon>
+		login
+		<md-icon md-font-icon="fa-caret-down" class="fa"></md-icon>
+	</md-button>
+	<md-menu-content width="2">
+		<md-menu-item>
+			<a class="google-login" ng-href="auth/google/?return={{location.absUrl()}}"
+				aria-label="Log In With Google">
+			</a>
+		</md-menu-item>
+		<md-menu-item>
+			<a class="facebook-login" ng-href="auth/facebook/?return={{location.absUrl()}}"
+				aria-label="Log In With Facebook">
+			</a>
+		</md-menu-item>
+		<md-menu-item>
+			<a class="linkedin-login" ng-href="auth/linkedin/?return={{location.absUrl()}}"
+				aria-label="Log In With LinkedIn">
+			</a>
+		</md-menu-item>
+		<md-menu-item>
+			<a class="twitter-login" ng-href="auth/twitter/?return={{location.absUrl()}}"
+				aria-label="Log In With Twitter">
+			</a>
+		</md-menu-item>
+	</md-menu-content>
+</md-menu>

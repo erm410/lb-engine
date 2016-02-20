@@ -1,0 +1,17 @@
+<div ng-if="user">
+	<md-button ng-if="admin">
+		<md-icon class="fa fa-lock fa-fw"></md-icon>admin
+	</md-button>
+	<md-divider ng-if="admin"></md-divider>
+	<md-button>
+		<md-icon class="fa fa-star fa-fw"></md-icon>favorite posts
+	</md-button>
+	<md-divider></md-divider>
+	<md-button>
+		<md-icon class="fa fa-comment fa-fw"></md-icon>comments
+	</md-button>
+	<md-divider></md-divider>
+	<md-button ng-click="logout()">
+		<md-icon class="fa fa-sign-out fa-fw"></md-icon>logout
+	</md-button>
+</div>
