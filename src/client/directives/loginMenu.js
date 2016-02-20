@@ -1,4 +1,5 @@
-module.exports = function() {
+module.exports = function($location) {
+	"ngInject";
 
 	return {
 
@@ -8,10 +9,8 @@ module.exports = function() {
 			user: "="
 		},
 
-		controller: function ($scope, $location) {
-			"ngInject";
-
-			$scope.location = $location;
+		link: function (scope) {
+			scope.location = $location;
 		}
 	};
 };

@@ -1,6 +1,7 @@
 var _ = require("lodash");
 
-module.exports = function() {
+module.exports = function($window, $http, $cookies) {
+	"ngInject";
 
 	return {
 
@@ -10,12 +11,11 @@ module.exports = function() {
 			user: "="
 		},
 
-		controller: function ($scope, $window, $http, $cookies) {
-			"ngInject";
+		link: function (scope) {
 
-			$scope.admin = $cookies.get("admin") === "true";
+			scope.admin = $cookies.get("admin") === "true";
 
-			$scope.logout = () => {
+			scope.logout = () => {
 				var reload = _.bind($window.location.reload, $window.location);
 				$http.post("logout").then(reload, reload);
 				return false;

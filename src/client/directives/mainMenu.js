@@ -4,6 +4,6 @@ module.exports = function() {
 
 		restrict: "E",
 		templateUrl: "views/directives/mainMenu.html",
-		scope: true
+		scope: {}
 	};
 };
